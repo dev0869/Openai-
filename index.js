@@ -4,12 +4,8 @@ import connectDb from "./mongodb/Connect.js";
 import ApiRoutes from "./Routes/ApiRoutes.js";
 import PostRoutes from "./Routes/PostRoutes.js";
 
-
 const app = express();
-app.use(cors({
-    origin:"*",
-    credentials:true
-}))
+app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
 app.use('/api/post',ApiRoutes)
