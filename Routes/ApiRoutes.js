@@ -3,7 +3,7 @@ import { OpenAIApi, Configuration } from 'openai'
 const Router = express.Router()
 
 const configuration = new Configuration({
-    apiKey: "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"
+    apiKey: "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"
 })
 
 const openapi = new OpenAIApi(configuration)
