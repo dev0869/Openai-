@@ -6,7 +6,7 @@ import PostRoutes from "./Routes/PostRoutes.js";
 
 const app = express();
 app.use(cors());
-app.use(express.json({ limit: '50mb' }));
+app.use(express.json({ limit: '500mb' }));
 
 app.use('/api/post',ApiRoutes)
 app.use('/api/posts',PostRoutes)

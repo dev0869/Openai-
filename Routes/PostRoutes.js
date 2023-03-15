@@ -20,12 +20,13 @@ Router.route('/').post(async (req, res) => {
       if (!name || !prompt || !photo) {
         return res.status(400).json({ success: false, message: 'Please provide name, prompt, and photo' });
       }
-      // const photoUrl = await cloudinary.uploader.upload(photo);
+      const photoUrl = await cloudinary.uploader.upload(photo);
+    
       const newPost = await Post.create({
         name,
         prompt,
-        photo,
-      });
+        photo:photoUrl.url,
+      })
       res.status(200).json({ success: true, data: newPost });
     } catch (err) {
       console.error(err);
